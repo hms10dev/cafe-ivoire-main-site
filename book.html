@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Us – Café Ivoire | Atlanta Coffee Catering</title>
+    <meta name="description"
+        content="Book Café Ivoire for your Atlanta event. Request a custom quote for coffee catering at weddings, corporate events, and gatherings.">
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="logo-link">café ivoire</a>
+            <button class="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/menu.html">Menu</a></li>
+                <li><a href="/gallery.html">Gallery</a></li>
+                <li><a href="/pricing.html">Pricing</a></li>
+                <li><a href="/book.html">Book Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Booking Hero -->
+    <section class="booking-hero">
+        <h1>Book Café Ivoire for Your Event</h1>
+        <p class="booking-subtitle">Tell us about your event and we'll follow up with a custom quote and suggested menu.
+        </p>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking-form-section">
+        <form class="booking-form" name="event-booking" method="POST" data-netlify="true" netlify-honeypot="bot-field"
+            action="/thanks.html">
+            <!-- Hidden fields for Netlify -->
+            <input type="hidden" name="form-name" value="event-booking">
+
+            <!-- Honeypot for spam protection -->
+            <p style="display: none;">
+                <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+            </p>
+
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone (optional)</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="event-type">Event Type *</label>
+                <select id="event-type" name="event-type" required>
+                    <option value="">Select event type</option>
+                    <option value="wedding">Wedding</option>
+                    <option value="walima">Walima</option>
+                    <option value="bridal-shower">Bridal Shower</option>
+                    <option value="engagement">Engagement Party</option>
+                    <option value="henna-night">Henna Night</option>
+                    <option value="corporate">Corporate Event</option>
+                    <option value="campus">Campus / University Event</option>
+                    <option value="campus">Brand Activation</option>
+                    <option value="community">Community Gathering</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="event-date">Event Date *</label>
+                    <input type="date" id="event-date" name="event-date" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="event-time">Event Time Window *</label>
+                    <input type="text" id="event-time" name="event-time" placeholder="e.g., 2pm - 5pm" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="location">Venue / Location *</label>
+                    <input type="text" id="location" name="location" placeholder="City, ZIP code" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="guest-count">Estimated Guest Count *</label>
+                    <input type="number" id="guest-count" name="guest-count" placeholder="e.g., 50" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="vision">What are you envisioning? *</label>
+                <textarea id="vision" name="vision" rows="6"
+                    placeholder="Tell us about your event, preferred drinks, any special requests, etc."
+                    required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="add-ons">Interested in add-ons?</label>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="beignets" value="yes">
+                        Mama's Beignets
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="scones" value="yes">
+                        Sahelian Scones
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="custom-drinks" value="yes">
+                        Custom Drink Naming
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" name="custom-drinks" value="yes">
+                        Custom Event Branding
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="hear-about">How did you hear about us?</label>
+                <input type="text" id="hear-about" name="hear-about" placeholder="Instagram, friend referral, etc.">
+            </div>
+
+            <button type="submit" class="cta-button">Submit Request</button>
+        </form>
+
+        <div class="booking-note">
+            <p><em>Une pause. Une tasse. Un moment de douceur.</em></p>
+            <p>We'll get back to you as soon as we can with next steps.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="contact-section">
+        <div class="story-content">
+            <h2>Or reach us directly:</h2>
+            <div class="contact-details">
+                <p>📧 <a href="mailto:hello@cafeivoire.co">hello@cafeivoire.co</a></p>
+                <p>📱 <a href="tel:470-244-6586">470-244-6586</a></p>
+            </div>
+            <div class="social-links" style="margin-top: 2rem;">
+                <a href="https://instagram.com/cafe_ivoire" target="_blank">Instagram</a>
+                <a href="https://tiktok.com/@cafe_ivoire" target="_blank">TikTok</a>
+                <a href="https://beacons.ai/cafe_ivoire" target="_blank">Links</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="/">Home</a>
+                <a href="/menu.html">Menu</a>
+                <a href="/gallery.html">Gallery</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/book.html">Book Us</a>
+            </div>
+            <div class="social-links">
+                <a href="https://instagram.com/cafe_ivoire" target="_blank">Instagram</a>
+                <a href="https://tiktok.com/@cafe_ivoire" target="_blank">TikTok</a>
+                <a href="https://beacons.ai/cafe_ivoire" target="_blank">Links</a>
+            </div>
+            <p>Café Ivoire — A space for stories, sipped slowly.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
