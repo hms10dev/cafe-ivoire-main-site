@@ -13,14 +13,13 @@
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="/images/favicon.png">
-
     <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="/" class="logo-link">café ivoire</a>
             <button class="hamburger" aria-label="Toggle menu">
@@ -39,39 +38,39 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="hero">
         <div class="hero-content">
             <img src="/images/logo.png" alt="Café Ivoire Logo"
-                style="width: 200px; height: 200px; margin-bottom: 2rem; opacity: 0.95;">
-            <h1>Sahelian Coffee Catering in Atlanta</h1>
-            <p class="tagline">Coffee, comfort, and Côte d'Ivoire: brought straight to your event.</p>
-            <p class="hero-body">
+                class="hero-enter"
+                style="width:200px;height:200px;margin-bottom:2rem;animation-delay:0ms">
+            <h1 class="hero-enter" style="animation-delay:300ms">Sahelian Coffee Catering in Atlanta</h1>
+            <p class="tagline hero-enter" style="animation-delay:550ms">Coffee, comfort, and Côte d'Ivoire: brought straight to your event.</p>
+            <p class="hero-body hero-enter" style="animation-delay:800ms">
                 Café Ivoire is a Mobile Sahelian café experience serving specialty espresso, matcha, and beignets
-                with West
-                African warmth. From garage pop-ups to weddings and corporate events, we bring a taste of home wherever
+                with West African warmth. From garage pop-ups to weddings and corporate events, we bring a taste of home wherever
                 you gather.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons hero-enter" style="animation-delay:1100ms">
                 <a href="/book.html" class="cta-button primary">Book Coffee Catering</a>
                 <a href="/menu.html" class="cta-button secondary">View Menu</a>
             </div>
         </div>
-        <div class="scroll-indicator">Where the Sahel meets the South</div>
+        <div class="scroll-indicator hero-enter" style="animation-delay:1600ms">Where the Sahel meets the South</div>
     </section>
 
     <!-- What We Do -->
     <section class="what-we-do">
         <div class="story-content">
-            <span class="section-label">What We Pour Into Your Events</span>
+            <span class="section-label reveal">What We Pour Into Your Events</span>
         </div>
-        <div class="services-grid">
+        <div class="services-grid reveal-stagger">
             <div class="service-item">
-                <h3>Mobile Coffee & Matcha Bar</h3>
+                <h3>Mobile Coffee &amp; Matcha Bar</h3>
                 <p>Specialty espresso, matcha, and non-caffeinated drinks inspired by Sahelian flavors—plantain syrup,
                     baobab notes, bissap spritzes, and more.</p>
             </div>
             <div class="service-item">
-                <h3>Beignets & Bakes</h3>
+                <h3>Beignets &amp; Bakes</h3>
                 <p>Mama T's beignets, Golden Sahel Cake, Sahelian Scones, and other small-batch bakes that taste like a
                     warm kitchen back home.</p>
             </div>
@@ -86,9 +85,9 @@
     <!-- Signature Drinks -->
     <section class="signature-section">
         <div class="story-content">
-            <span class="section-label">Signature Sahelian Drinks</span>
+            <span class="section-label reveal">Signature Sahelian Drinks</span>
         </div>
-        <div class="signature-grid">
+        <div class="signature-grid reveal-stagger">
             <div class="signature-item">
                 <h3>Doussou Banani</h3>
                 <p>Our plantain latte-roasted plantain syrup, smooth espresso, warm nostalgia.</p>
@@ -110,54 +109,54 @@
                 <p>Hand-cut, cloudlike beignets dusted with powdered sugar. Just like our tanties made.</p>
             </div>
         </div>
-        <p class="signature-note">Every drink carries a memory from home: crafted with plantains, vanilla, butter,
+        <p class="signature-note reveal">Every drink carries a memory from home: crafted with plantains, vanilla, butter,
             strawberry purée, and Sahelian warmth.</p>
     </section>
 
     <!-- Who It's For -->
     <section class="who-section">
         <div class="story-content">
-            <span class="section-label">Built for Moments That Matter</span>
+            <span class="section-label reveal">Built for Moments That Matter</span>
         </div>
         <div class="events-list">
-            <ul>
-                <li>Weddings & Walimas</li>
+            <ul class="reveal-stagger">
+                <li>Weddings &amp; Walimas</li>
                 <li>Bridal showers, henna nights, engagement parties</li>
-                <li>Corporate events & offsites</li>
-                <li>University activations & pop-ups</li>
-                <li>Community gatherings & cultural nights</li>
+                <li>Corporate events &amp; offsites</li>
+                <li>University activations &amp; pop-ups</li>
+                <li>Community gatherings &amp; cultural nights</li>
             </ul>
-            <p class="location-note">Based in Atlanta, serving Metro Atlanta and surrounding areas.</p>
+            <p class="location-note reveal">Based in Atlanta, serving Metro Atlanta and surrounding areas.</p>
         </div>
     </section>
 
     <!-- Our Story -->
     <section class="story-section">
-        <div class="story-content">
-            <span class="section-label">Where the Sahel Meets the South</span>
-            <p class="story-text">
-                Café Ivoire is a love letter to the Sahel and the South.<br>
-                To plantains roasting in our mothers' kitchens.<br>
-                To attaya poured slowly in small glasses.<br>
-                To long conversations that stretch from Abidjan to Atlanta.
-            </p>
-            <p class="story-text">
-                We built this coffee company to make those memories portable—a mobile third space with espresso, matcha,
-                beignets, and a lot of stubborn auntie love.
-            </p>
+        <div class="story-content" data-story-block>
+            <span class="section-label story-line">Where the Sahel Meets the South</span>
+            <div class="story-text">
+                <span class="story-line">Café Ivoire is a love letter to the Sahel and the South.</span>
+                <span class="story-line">To plantains roasting in our mothers' kitchens.</span>
+                <span class="story-line">To attaya poured slowly in small glasses.</span>
+                <span class="story-line">To long conversations that stretch from Abidjan to Atlanta.</span>
+            </div>
+            <div class="story-text" style="margin-top:2rem">
+                <span class="story-line">We built this coffee company to make those memories portable—a mobile third space with espresso, matcha,
+                    beignets, and a lot of stubborn auntie love.</span>
+            </div>
         </div>
     </section>
 
     <!-- Values -->
     <section class="values-section">
         <div class="story-content">
-            <span class="section-label">What We're Building</span>
-            <p class="story-text" style="margin-bottom: 3rem;">
+            <span class="section-label reveal">What We're Building</span>
+            <p class="story-text reveal" style="margin-bottom:3rem">
                 From cart to café, we're growing slowly, intentionally. And right now that means pouring at the events
                 where community already gathers.
             </p>
         </div>
-        <div class="values-grid">
+        <div class="values-grid reveal-stagger">
             <div class="value-item">
                 <svg class="value-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -171,7 +170,6 @@
                 <p class="value-description">Every drink is rooted in West African heritage—never borrowed, always
                     remembered.</p>
             </div>
-
             <div class="value-item">
                 <svg class="value-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -184,7 +182,6 @@
                 <p class="value-description">A platform for Black and African artisans, makers, and storytellers to
                     thrive.</p>
             </div>
-
             <div class="value-item">
                 <svg class="value-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -200,7 +197,7 @@
     </section>
 
     <!-- CTA Strip -->
-    <section class="cta-strip">
+    <section class="cta-strip reveal">
         <h2>Ready to bring Sahelian coffee to your event?</h2>
         <p>Tell us about your date, guest count, and vision.</p>
         <a href="/book.html" class="cta-button">Book Coffee Catering</a>
@@ -225,8 +222,14 @@
         </div>
     </footer>
 
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <p>Ready to book your event?</p>
+        <a href="/book.html" class="cta-button">Book Now</a>
+    </div>
+
     <script>
-        // Hamburger menu toggle
+        // ── Hamburger menu ──────────────────────────────────────
         const hamburger = document.querySelector('.hamburger');
         const navLinks = document.querySelector('.nav-links');
 
@@ -235,7 +238,6 @@
             navLinks.classList.toggle('active');
         });
 
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
                 hamburger.classList.remove('active');
@@ -243,13 +245,64 @@
             }
         });
 
-        // Close menu when clicking a link
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navLinks.classList.remove('active');
             });
         });
+
+        // ── Scroll reveal (IntersectionObserver) ───────────────
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+            revealObserver.observe(el);
+        });
+
+        // ── Story line stagger ──────────────────────────────────
+        const storyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.story-line').forEach((line, i) => {
+                        line.style.transitionDelay = `${i * 180}ms`;
+                        line.classList.add('visible');
+                    });
+                    storyObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('[data-story-block]').forEach(el => {
+            storyObserver.observe(el);
+        });
+
+        // ── Scroll events (nav + sticky CTA + parallax) ────────
+        const nav = document.getElementById('mainNav');
+        const hero = document.getElementById('hero');
+        const heroContent = hero.querySelector('.hero-content');
+        const stickyCta = document.getElementById('stickyCta');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+
+            // Nav state
+            nav.classList.toggle('scrolled', scrollY > 60);
+
+            // Sticky CTA: show after hero scrolls out
+            stickyCta.classList.toggle('visible', hero.getBoundingClientRect().bottom < 0);
+
+            // Subtle parallax on hero content
+            if (scrollY < window.innerHeight * 1.2) {
+                heroContent.style.transform = `translateY(${scrollY * 0.16}px)`;
+            }
+        }, { passive: true });
     </script>
 
 </body>

@@ -1117,16 +1117,216 @@ footer p {
     }
 }
 
-/* Subtle texture overlay */
+/* Subtle texture overlay — slightly oversized so drift animation has no edges */
 body::before {
     content: '';
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: -2%;
+    left: -2%;
+    width: 104%;
+    height: 104%;
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter><rect width="100" height="100" filter="url(%23noise)" opacity="0.03"/></svg>');
     pointer-events: none;
     z-index: 9999;
     opacity: 0.4;
+    animation: grainDrift 7s steps(2) infinite;
+}
+
+/* ================================================================
+   ANIMATION SYSTEM
+   ================================================================ */
+
+/* Grain drift */
+@keyframes grainDrift {
+    0%   { transform: translate(0,    0);    }
+    14%  { transform: translate(-1.5%, -2%); }
+    28%  { transform: translate(2%,  1.5%);  }
+    43%  { transform: translate(-1%,  2.5%); }
+    57%  { transform: translate(1.5%, -1.5%);}
+    71%  { transform: translate(-2%,  1%);   }
+    85%  { transform: translate(1%,  -2.5%); }
+    100% { transform: translate(0,    0);    }
+}
+
+/* Hero entrance */
+@keyframes heroFadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
+
+.hero-enter {
+    animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Scroll reveal — single elements */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll reveal — staggered grids / lists */
+.reveal-stagger > * {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-stagger.visible > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s;    }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s;  }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.2s;  }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.3s;  }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.4s;  }
+
+/* Story line — individual line reveal */
+.story-line {
+    display: block;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.story-line.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Nav — transparent → cream on scroll */
+.main-nav {
+    transition: background 0.5s ease, box-shadow 0.5s ease;
+}
+
+.main-nav.scrolled {
+    background: rgba(245, 239, 230, 0.98);
+    box-shadow: 0 2px 24px rgba(74, 52, 40, 0.1);
+}
+
+/* Enhanced button hover */
+.cta-button {
+    transition: background 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(74, 52, 40, 0.18);
+}
+
+/* Enhanced card hovers */
+.service-item {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.4s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(74, 52, 40, 0.1);
+    border-color: rgba(212, 165, 116, 0.5);
+}
+
+.signature-item {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.signature-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(74, 52, 40, 0.08);
+}
+
+.value-item {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.value-item:hover {
+    transform: translateY(-6px);
+}
+
+.value-icon {
+    color: var(--terracotta);
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+}
+
+.value-item:hover .value-icon {
+    transform: scale(1.12) rotate(-4deg);
+    color: var(--gold);
+}
+
+/* Sticky CTA bar */
+.sticky-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--terracotta);
+    color: var(--warm-cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem 2rem;
+    z-index: 998;
+    transform: translateY(100%);
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    flex-wrap: wrap;
+}
+
+.sticky-cta.visible {
+    transform: translateY(0);
+}
+
+.sticky-cta p {
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    margin: 0;
+}
+
+.sticky-cta .cta-button {
+    padding: 0.65rem 1.75rem;
+    font-size: 0.8rem;
+    background: transparent;
+    color: var(--warm-cream);
+    border-color: var(--warm-cream);
+    margin: 0;
+}
+
+.sticky-cta .cta-button:hover {
+    background: var(--warm-cream);
+    color: var(--terracotta);
+    box-shadow: none;
+    transform: none;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .hero-enter,
+    .reveal,
+    .reveal-stagger > *,
+    .story-line {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+
+    body::before {
+        animation: none;
+    }
 }
