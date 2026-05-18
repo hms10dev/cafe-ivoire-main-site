@@ -13,7 +13,7 @@
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="/images/favicon.png">
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css?v=3" />
 </head>
 
 <body>
@@ -39,10 +39,11 @@
 
     <!-- Hero -->
     <section class="hero" id="hero">
+        <canvas id="particleCanvas" class="particle-canvas"></canvas>
         <div class="hero-content">
             <img src="/images/logo.png" alt="Café Ivoire Logo"
                 class="hero-enter"
-                style="width:200px;height:200px;margin-bottom:2rem;animation-delay:0ms">
+                style="width:200px;height:200px;margin-bottom:2.5rem;animation-delay:0ms">
             <h1 class="hero-enter" style="animation-delay:300ms">Sahelian Coffee Catering in Atlanta</h1>
             <p class="tagline hero-enter" style="animation-delay:550ms">Coffee, comfort, and Côte d'Ivoire: brought straight to your event.</p>
             <p class="hero-body hero-enter" style="animation-delay:800ms">
@@ -55,7 +56,7 @@
                 <a href="/menu.html" class="cta-button secondary">View Menu</a>
             </div>
         </div>
-        <div class="scroll-indicator hero-enter" style="animation-delay:1600ms">Where the Sahel meets the South</div>
+        <div class="scroll-indicator hero-enter" style="animation-delay:1700ms">Where the Sahel meets the South</div>
     </section>
 
     <!-- What We Do -->
@@ -90,27 +91,91 @@
         <div class="signature-grid reveal-stagger">
             <div class="signature-item">
                 <h3>Doussou Banani</h3>
-                <p>Our plantain latte-roasted plantain syrup, smooth espresso, warm nostalgia.</p>
-            </div>
-            <div class="signature-item">
-                <h3>Gâteau Doumini</h3>
-                <p>A dessert-in-a-cup: vanilla, caramelized sugar, espresso layered like birthday cake.</p>
+                <p>Our plantain latte — house plantain syrup, smooth espresso, warm nostalgia. The one people ask about.</p>
             </div>
             <div class="signature-item">
                 <h3>Matcha Mandé</h3>
-                <p>Matcha meets Mandé flavors: subtle nuttiness and tropical plantain sweetness.</p>
+                <p>Matcha meets Mandé flavors — subtle nuttiness with a hint of tropical plantain sweetness.</p>
             </div>
             <div class="signature-item">
-                <h3>Garden Party</h3>
-                <p>Earl Grey–infused matcha with fresh strawberry purée.</p>
+                <h3>La Minimaliste</h3>
+                <p>Pure matcha, lightly sweetened. Clean and elegant. Nothing extra.</p>
             </div>
             <div class="signature-item">
-                <h3>Mama's Beignets</h3>
-                <p>Hand-cut, cloudlike beignets dusted with powdered sugar. Just like our tanties made.</p>
+                <h3>Bissap Spritz</h3>
+                <p>Deep red hibiscus, kissed with citrus and sparkle. Vibrant, refreshing, caffeine-free.</p>
+            </div>
+            <div class="signature-item">
+                <h3>Mama T's Beignets</h3>
+                <p>Comfy bites of heaven dusted with sucre. Soft, warm, cloudlike — just like our aunties made.</p>
             </div>
         </div>
-        <p class="signature-note reveal">Every drink carries a memory from home: crafted with plantains, vanilla, butter,
+        <p class="signature-note reveal">Every drink carries a memory from home — crafted with plantains, vanilla, butter,
             strawberry purée, and Sahelian warmth.</p>
+    </section>
+
+    <!-- Sahel Sessions -->
+    <section class="sessions-section">
+        <div class="sessions-inner">
+            <span class="section-label reveal">Pop-Ups &amp; Sahel Sessions</span>
+            <h2 class="sessions-heading reveal">The cart comes to you.</h2>
+            <p class="sessions-body reveal">
+                A Sahel Session is a pop-up moment — coffee and community, set down somewhere it's needed.
+                A gallery on a Friday. A garden on a Sunday. A garage that smells like something good is happening.
+            </p>
+            <p class="sessions-body reveal">
+                We've poured at henna nights and market days. Graduations and cultural evenings.
+                The kind of gathering that deserves more than a coffee urn.
+            </p>
+            <div class="sessions-tags reveal-stagger">
+                <span class="session-tag">Roswell · Bookstore</span>
+                <span class="session-tag">Atlanta Beltline · Patagonia</span>
+                <span class="session-tag">Decatur · Masjid</span>
+            </div>
+            <div class="sessions-cta reveal">
+                <p class="sessions-cta-text">Want to host a Sahel Session at your next gathering?</p>
+                <a href="/book.html" class="cta-button sessions-btn">Let's Talk</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners-section">
+        <div class="partners-inner">
+            <span class="partners-label reveal">Poured at</span>
+            <div class="partners-logos reveal-stagger">
+                <div class="partner-logo">
+                    <img src="/images/partners/patagonia.png" alt="Patagonia"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                    <span class="partner-name-fallback" style="display:none">Patagonia</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="/images/partners/a-better-today.png" alt="A Better Today Books &amp; Boutique"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                    <span class="partner-name-fallback" style="display:none">A Better Today Books &amp; Boutique</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar -->
+    <section class="calendar-section">
+        <div class="calendar-inner">
+            <span class="section-label reveal">Upcoming Sessions</span>
+            <h2 class="calendar-heading reveal">Where we're pouring next.</h2>
+            <p class="calendar-subtext reveal">Follow along and find us at our next pop-up. All events are free to attend unless noted.</p>
+            <div class="calendar-embed-wrap reveal">
+                <iframe
+                    src="https://luma.com/embed/calendar/cal-8viteStYNipFIjB/events"
+                    width="600"
+                    height="480"
+                    frameborder="0"
+                    allowfullscreen=""
+                    aria-hidden="false"
+                    tabindex="0"
+                ></iframe>
+            </div>
+        </div>
     </section>
 
     <!-- Who It's For -->
@@ -140,9 +205,8 @@
                 <span class="story-line">To attaya poured slowly in small glasses.</span>
                 <span class="story-line">To long conversations that stretch from Abidjan to Atlanta.</span>
             </div>
-            <div class="story-text" style="margin-top:2rem">
-                <span class="story-line">We built this coffee company to make those memories portable—a mobile third space with espresso, matcha,
-                    beignets, and a lot of stubborn auntie love.</span>
+            <div class="story-text" style="margin-top:2.5rem">
+                <span class="story-line">We built this coffee company to make those memories portable — a mobile third space with espresso, matcha, beignets, and a lot of stubborn auntie love.</span>
             </div>
         </div>
     </section>
@@ -151,7 +215,7 @@
     <section class="values-section">
         <div class="story-content">
             <span class="section-label reveal">What We're Building</span>
-            <p class="story-text reveal" style="margin-bottom:3rem">
+            <p class="story-text reveal" style="margin-bottom:4rem">
                 From cart to café, we're growing slowly, intentionally. And right now that means pouring at the events
                 where community already gathers.
             </p>
@@ -162,13 +226,10 @@
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                    </path>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                 </svg>
                 <h3 class="value-title">Diaspora-Driven</h3>
-                <p class="value-description">Every drink is rooted in West African heritage—never borrowed, always
-                    remembered.</p>
+                <p class="value-description">Every drink is rooted in West African heritage — never borrowed, always remembered.</p>
             </div>
             <div class="value-item">
                 <svg class="value-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -179,8 +240,7 @@
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
                 <h3 class="value-title">Community-Centered</h3>
-                <p class="value-description">A platform for Black and African artisans, makers, and storytellers to
-                    thrive.</p>
+                <p class="value-description">A platform for Black and African artisans, makers, and storytellers to thrive.</p>
             </div>
             <div class="value-item">
                 <svg class="value-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -190,8 +250,7 @@
                     <circle cx="12" cy="12" r="3"></circle>
                 </svg>
                 <h3 class="value-title">Built to Last</h3>
-                <p class="value-description">Growing with intention, not speed. From cart to café, one step at a time.
-                </p>
+                <p class="value-description">Growing with intention, not speed. From cart to café, one step at a time.</p>
             </div>
         </div>
     </section>
@@ -229,30 +288,101 @@
     </div>
 
     <script>
-        // ── Hamburger menu ──────────────────────────────────────
+        // ── Hamburger ───────────────────────────────────────────
         const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const navLinks  = document.querySelector('.nav-links');
+
+        function openMenu() {
+            hamburger.classList.add('active');
+            navLinks.classList.add('active');
+            nav.classList.add('menu-open');
+        }
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            nav.classList.remove('menu-open');
+        }
 
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            nav.classList.contains('menu-open') ? closeMenu() : openMenu();
         });
-
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) closeMenu();
         });
-
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
+            link.addEventListener('click', closeMenu);
         });
 
-        // ── Scroll reveal (IntersectionObserver) ───────────────
+        // ── Fuzzy particle system ───────────────────────────────
+        (function () {
+            const canvas = document.getElementById('particleCanvas');
+            const ctx    = canvas.getContext('2d');
+
+            const COLORS = [
+                [198, 123, 92],   // terracotta
+                [212, 165, 116],  // gold
+                [74,  52,  40],   // deep brown
+                [155, 139, 126],  // sage
+            ];
+
+            function resize() {
+                canvas.width  = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize, { passive: true });
+
+            function makeParticle(startAnywhere) {
+                const r = 18 + Math.random() * 52;
+                return {
+                    x:           Math.random() * canvas.width,
+                    y:           startAnywhere
+                                   ? Math.random() * canvas.height
+                                   : canvas.height + r + Math.random() * 120,
+                    r,
+                    opacity:     0.05 + Math.random() * 0.13,
+                    speed:       0.12 + Math.random() * 0.32,
+                    wobble:      (Math.random() - 0.5) * 0.45,
+                    wobbleFreq:  0.007 + Math.random() * 0.014,
+                    wobblePhase: Math.random() * Math.PI * 2,
+                    color:       COLORS[Math.floor(Math.random() * COLORS.length)],
+                };
+            }
+
+            const COUNT     = 20;
+            const particles = Array.from({ length: COUNT }, () => makeParticle(true));
+            let   t         = 0;
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                t++;
+
+                particles.forEach(p => {
+                    p.y -= p.speed;
+                    p.x += Math.sin(t * p.wobbleFreq + p.wobblePhase) * p.wobble;
+
+                    if (p.y + p.r < 0) {
+                        Object.assign(p, makeParticle(false));
+                    }
+
+                    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+                    const [r, gr, b] = p.color;
+                    g.addColorStop(0,    `rgba(${r},${gr},${b},${p.opacity})`);
+                    g.addColorStop(0.45, `rgba(${r},${gr},${b},${p.opacity * 0.35})`);
+                    g.addColorStop(1,    `rgba(${r},${gr},${b},0)`);
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = g;
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+
+        // ── Scroll reveal ───────────────────────────────────────
         const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -283,22 +413,16 @@
             storyObserver.observe(el);
         });
 
-        // ── Scroll events (nav + sticky CTA + parallax) ────────
-        const nav = document.getElementById('mainNav');
-        const hero = document.getElementById('hero');
+        // ── Scroll: nav + sticky CTA + parallax ────────────────
+        const nav        = document.getElementById('mainNav');
+        const hero       = document.getElementById('hero');
         const heroContent = hero.querySelector('.hero-content');
-        const stickyCta = document.getElementById('stickyCta');
+        const stickyCta  = document.getElementById('stickyCta');
 
         window.addEventListener('scroll', () => {
             const scrollY = window.pageYOffset;
-
-            // Nav state
             nav.classList.toggle('scrolled', scrollY > 60);
-
-            // Sticky CTA: show after hero scrolls out
             stickyCta.classList.toggle('visible', hero.getBoundingClientRect().bottom < 0);
-
-            // Subtle parallax on hero content
             if (scrollY < window.innerHeight * 1.2) {
                 heroContent.style.transform = `translateY(${scrollY * 0.16}px)`;
             }
@@ -306,5 +430,4 @@
     </script>
 
 </body>
-
 </html>
