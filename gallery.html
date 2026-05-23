@@ -13,19 +13,282 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css?v=3" />
+    <style>
+        /* ── Gallery page reset ── */
+        body { background: var(--charcoal); }
+
+        /* ── Nav over dark ── */
+        .main-nav {
+            background: transparent !important;
+            border-bottom: none !important;
+            box-shadow: none !important;
+        }
+        .main-nav.scrolled {
+            background: rgba(44, 36, 32, 0.95) !important;
+            box-shadow: 0 2px 24px rgba(0,0,0,0.3) !important;
+        }
+        .logo-link { color: var(--warm-cream) !important; }
+        .hamburger span { background: var(--warm-cream) !important; }
+        .nav-links a { color: rgba(245,239,230,0.6) !important; }
+        .nav-links a:hover { color: var(--gold) !important; }
+
+        /* ── Cinematic hero ── */
+        .g-hero {
+            position: relative;
+            height: 100vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+        .g-hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            filter: contrast(1.05) saturate(0.85) sepia(0.06);
+        }
+        .g-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(44,36,32,0.1) 0%,
+                rgba(44,36,32,0.0) 40%,
+                rgba(44,36,32,0.6) 100%
+            );
+        }
+        .g-hero-text {
+            position: absolute;
+            bottom: 4rem;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: var(--warm-cream);
+            width: 100%;
+            padding: 0 2rem;
+        }
+        .g-hero-label {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: rgba(245,239,230,0.6);
+            margin-bottom: 1rem;
+            animation: heroFadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.3s both;
+        }
+        .g-hero-heading {
+            font-family: 'Lora', serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            color: var(--warm-cream);
+            animation: heroFadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.6s both;
+        }
+
+        /* ── Global photo styles ── */
+        .g-photo {
+            position: relative;
+            overflow: hidden;
+            margin: 0;
+        }
+        .g-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            filter: contrast(1.04) saturate(0.88) sepia(0.05);
+            transition: transform 0.7s cubic-bezier(0.22,1,0.36,1),
+                        filter 0.5s ease;
+        }
+        .g-photo:hover img {
+            transform: scale(1.04);
+            filter: contrast(1.06) saturate(0.96) sepia(0.03);
+        }
+        figcaption {
+            font-family: 'Lora', serif;
+            font-style: italic;
+            font-size: 0.78rem;
+            color: var(--sage);
+            margin-top: 0.75rem;
+            letter-spacing: 0.02em;
+            opacity: 0.8;
+        }
+
+        /* ── Editorial grid ── */
+        .g-editorial {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3px;
+            background: var(--charcoal);
+        }
+
+        .g-photo.portrait img  { aspect-ratio: 3/4; }
+        .g-photo.landscape img { aspect-ratio: 3/2; }
+        .g-photo.square img    { aspect-ratio: 1/1; }
+
+        .g-span-2 { grid-column: span 2; }
+        .g-span-3 { grid-column: span 3; }
+        .g-span-3 img { aspect-ratio: 21/9; max-height: 70vh; }
+
+        /* ── Breathing room ── */
+        .g-spacer {
+            background: var(--charcoal);
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+        .g-spacer-text {
+            font-family: 'Lora', serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            font-style: italic;
+            color: rgba(245,239,230,0.25);
+            letter-spacing: 0.04em;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* ── Scattered / polaroid section ── */
+        .g-scatter {
+            background: var(--deep-brown);
+            padding: 6rem 2rem;
+            overflow: hidden;
+        }
+        .g-scatter-inner {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2.5rem;
+            justify-content: center;
+            align-items: flex-start;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .g-scatter-label {
+            width: 100%;
+            text-align: center;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: rgba(212,165,116,0.5);
+            margin-bottom: 1rem;
+        }
+        .g-polaroid {
+            background: white;
+            padding: 10px;
+            padding-bottom: 3rem;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+            width: calc(25% - 2rem);
+            min-width: 180px;
+            max-width: 260px;
+            margin: 0;
+            transition: transform 0.45s cubic-bezier(0.22,1,0.36,1),
+                        box-shadow 0.4s ease;
+        }
+        .g-polaroid img {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            display: block;
+            filter: contrast(1.03) saturate(0.85);
+        }
+        .g-polaroid figcaption {
+            color: var(--charcoal);
+            opacity: 0.55;
+            font-size: 0.72rem;
+            margin-top: 0.6rem;
+            text-align: center;
+        }
+        .g-polaroid:nth-child(2) { transform: rotate(-2.8deg) translateY(12px); }
+        .g-polaroid:nth-child(3) { transform: rotate(1.5deg) translateY(-8px); }
+        .g-polaroid:nth-child(4) { transform: rotate(-1.2deg) translateY(6px); }
+        .g-polaroid:nth-child(5) { transform: rotate(2.4deg) translateY(-14px); }
+
+        .g-polaroid:hover {
+            transform: rotate(0deg) translateY(-8px) scale(1.04) !important;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+
+        /* ── Full bleed closer ── */
+        .g-fullbleed {
+            position: relative;
+            height: 70vh;
+            min-height: 400px;
+            overflow: hidden;
+        }
+        .g-fullbleed img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 30%;
+            filter: contrast(1.04) saturate(0.85) sepia(0.06);
+            transition: transform 8s ease;
+        }
+        .g-fullbleed:hover img {
+            transform: scale(1.04);
+        }
+
+        /* ── CTA ── */
+        .g-cta {
+            background: var(--charcoal);
+            padding: 8rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(212,165,116,0.1);
+        }
+        .g-cta h2 {
+            font-family: 'Lora', serif;
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 400;
+            color: var(--warm-cream);
+            margin-bottom: 0.75rem;
+        }
+        .g-cta p {
+            color: var(--sage);
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+
+        /* ── Footer override ── */
+        footer {
+            background: var(--charcoal);
+            border-top: 1px solid rgba(212,165,116,0.08);
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .g-editorial {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .g-span-2 { grid-column: span 2; }
+            .g-span-3 { grid-column: span 2; }
+            .g-span-3 img { aspect-ratio: 4/3; max-height: 50vh; }
+
+            .g-polaroid {
+                width: calc(50% - 1.5rem);
+                max-width: none;
+            }
+            .g-scatter-inner { gap: 1.5rem; }
+
+            .g-fullbleed { height: 50vh; }
+        }
+
+        @media (max-width: 480px) {
+            .g-editorial { grid-template-columns: 1fr; }
+            .g-span-2, .g-span-3 { grid-column: span 1; }
+            .g-span-3 img { aspect-ratio: 3/4; }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="/" class="logo-link">café ivoire</a>
             <button class="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
             <ul class="nav-links">
                 <li><a href="/">Home</a></li>
@@ -37,83 +300,113 @@
         </div>
     </nav>
 
-    <!-- Gallery Hero -->
-    <section class="gallery-hero">
-        <h1>Gallery</h1>
-        <p class="gallery-subtitle">Every cart, every cup, every beignet is designed to feel like stepping into a warm
-            Sahelian living room—just with more espresso.</p>
-    </section>
-
-    <!-- Garage Pop-Up Tastings -->
-    <section class="gallery-section">
-        <div class="story-content">
-            <h2 class="gallery-section-title">Pop-Up Tastings</h2>
+    <!-- Cinematic Hero -->
+    <div class="g-hero">
+        <img class="g-hero-img" src="/images/gallery/sessions/drink-doussou-2.jpg" alt="Doussou Banani — avec glace.">
+        <div class="g-hero-overlay"></div>
+        <div class="g-hero-text">
+            <span class="g-hero-label">Atlanta &nbsp;·&nbsp; 2025</span>
+            <h1 class="g-hero-heading">Sipped slowly.</h1>
         </div>
-        <div class="gallery-grid">
-            <!-- Placeholder for future images -->
-            <!--<div class="gallery-placeholder">
-                <p>Photos from garage setup, cups, beignets, and small gatherings coming soon.</p>
-            </div> -->
-            <img src="/images/gallery/popups/Popup edited - 1 of 5.png"
-                alt="Café Ivoire garage pop-up setup in Atlanta">
-            <img src="/images/gallery/popups/Popup edited - 1 of 19.png" alt="Mobile coffee cart at garage tasting">
-            <img src="/images/gallery/popups/Popup edited - 2 of 19.png" alt="Coffee bar setup for small gathering">
-            <img src="/images/gallery/popups/Popup edited - 3 of 19.png" alt="Vintage espresso machine at pop-up">
-            <img src="/images/gallery/popups/Popup edited - 4 of 19.png" alt="Beignets and coffee at garage event">
-            <img src="/images/gallery/popups/Popup edited - 5 of 5.png" alt="Café Ivoire pop-up atmosphere">
-            <img src="/images/gallery/popups/Popup edited - 12 of 19.png" alt="Pop-up coffee catering Atlanta">
-            <img src="/images/gallery/popups/Popup edited - 13 of 19.png" alt="Garage tasting setup">
-            <img src="/images/gallery/popups/Popup edited - 14 of 19.png" alt="Community coffee gathering">
-            <img src="/images/gallery/popups/Popup edited - 15 of 19.png" alt="Sahelian coffee pop-up event">
+    </div>
 
-        </div>
-    </section>
+    <!-- Editorial Grid — Act I -->
+    <div class="g-editorial">
 
-    <!-- Drinks & Details -->
-    <section class="gallery-section">
-        <div class="story-content">
-            <h2 class="gallery-section-title">Drinks & Details</h2>
-        </div>
-        <div class="gallery-grid">
-            <!-- Placeholder for future images -->
-            <!-- <div class="gallery-placeholder">
-                <p>Close-ups of layered drinks, plantain garnish, beignet glaze, cups, and signage coming soon.</p>
-            </div> -->
-            <img src="/images/gallery/Drinks/Drinks - 1 of 25.png"
-                alt="Sahelian coffee drink close-up from Café Ivoire">
-            <img src="/images/gallery/Drinks/Drinks - 4 of 25.png" alt="Café Ivoire signature drink">
-            <img src="/images/gallery/Drinks/Drinks - 6 of 25.png" alt="Matcha drink with strawberry purée">
-            <img src="/images/gallery/Drinks/Drinks - 7 of 25.png" alt="Coffee cup detail shot">
-            <img src="/images/gallery/Drinks/Drinks - 8 of 25.png" alt="Espresso drink from Atlanta coffee catering">
-            <img src="/images/gallery/Drinks/Drinks - 9 of 25.png" alt="Iced coffee with cold foam">
-            <img src="/images/gallery/Drinks/Drinks - 11 of 25.png" alt="Café Ivoire drink menu">
-            <img src="/images/gallery/Drinks/Drinks - 12 of 25.png" alt="Plantain syrup latte">
-            <img src="/images/gallery/Drinks/Drinks - 14 of 25.png" alt="Matcha latte close-up">
-            <img src="/images/gallery/Drinks/Drinks - 15 of 25.png" alt="Sahelian coffee catering drink">
+        <figure class="g-photo g-span-2 reveal">
+            <img style="aspect-ratio:3/2" src="/images/gallery/sessions/drink-matcha-2.jpg" alt="Matcha Mandé Glacé.">
+        </figure>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/drink-doussou-1.jpg" alt="Doussou Banani — avec glace.">
+        </figure>
 
-        </div>
-    </section>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/drink-matcha-1.jpg" alt="Matcha Mandé.">
+        </figure>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/session-02.jpg" alt="Ready to pour.">
+        </figure>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/drink-bissap.jpg" alt="Bissap Spritz.">
+        </figure>
 
-    <!-- Moments & Rituals -->
-    <section class="gallery-section">
-        <div class="story-content">
-            <h2 class="gallery-section-title">Moments</h2>
-        </div>
-        <div class="gallery-grid">
-            <!-- Placeholder for future images -->
-            <!-- <div class="gallery-placeholder">
-                <p>Hands holding cups, mancala boards, menu cards, and community moments coming soon.</p>
-            </div> -->
-            <img src="/images/gallery/Moments/Popup edited - 3 of 5.png" alt="Hands holding Café Ivoire coffee cup">
-            <img src="/images/gallery/Moments/Popup edited - 4 of 5.png" alt="Community moment at coffee tasting">
+        <figure class="g-photo g-span-2 reveal">
+            <img style="aspect-ratio:3/2" src="/images/gallery/sessions/session-06.jpg" alt="The cart, in the field.">
+        </figure>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/session-07.jpg" alt="From ABJ to ATL.">
+        </figure>
 
+    </div>
+
+    <!-- Breathing room -->
+    <div class="g-spacer reveal">
+        <p class="g-spacer-text">"From West Roast to East Coast."</p>
+    </div>
+
+    <!-- Scattered Polaroids -->
+    <section class="g-scatter">
+        <div class="g-scatter-inner">
+            <span class="g-scatter-label reveal">In the field</span>
+
+            <figure class="g-polaroid reveal">
+                <img src="/images/gallery/sessions/session-08.jpg" alt="Pouring at the Beltline.">
+                <figcaption>Beltline. Saturday.</figcaption>
+            </figure>
+            <figure class="g-polaroid reveal">
+                <img src="/images/gallery/sessions/session-03.jpg" alt="Henna at the session.">
+                <figcaption>She came for coffee.</figcaption>
+            </figure>
+            <figure class="g-polaroid reveal">
+                <img src="/images/gallery/sessions/session-01.jpg" alt="Taking the order.">
+                <figcaption>Every order, personal.</figcaption>
+            </figure>
+            <figure class="g-polaroid reveal">
+                <img src="/images/gallery/Moments/Popup edited - 3 of 5.png" alt="Cup and box.">
+                <figcaption>Mama T's, still warm.</figcaption>
+            </figure>
         </div>
     </section>
+
+    <!-- Editorial Grid — Act II -->
+    <div class="g-editorial">
+
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/session-04.jpg" alt="Before the first pour.">
+        </figure>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/session-02.jpg" alt="Ready to pour.">
+        </figure>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/drink-doussou-1.jpg" alt="Doussou Banani.">
+        </figure>
+
+        <figure class="g-photo g-span-3 reveal">
+            <img src="/images/gallery/sessions/session-09.jpg" alt="The menu, explained." style="object-position: center 35%;">
+        </figure>
+
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/drink-matcha-1.jpg" alt="Matcha Mandé.">
+        </figure>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/drink-bissap.jpg" alt="Bissap Spritz.">
+        </figure>
+        <figure class="g-photo portrait reveal">
+            <img src="/images/gallery/sessions/drink-doussou-2.jpg" alt="Doussou Banani — avec glace.">
+        </figure>
+
+    </div>
+
+    <!-- Full-bleed closer -->
+    <div class="g-fullbleed">
+        <img src="/images/gallery/sessions/session-10.jpg" alt="Café Ivoire — the Beltline." style="object-position: center 40%;">
+    </div>
 
     <!-- CTA -->
-    <section class="gallery-cta">
-        <h2>Ready to create your own Café Ivoire moment?</h2>
-        <a href="/book.html" class="cta-button">Book Us for Your Event</a>
+    <section class="g-cta">
+        <h2 class="reveal">Ready to be in the next one?</h2>
+        <p class="reveal">Book your event and let us bring the moment to you.</p>
+        <a href="/book.html" class="cta-button reveal">Book Us</a>
     </section>
 
     <!-- Footer -->
@@ -136,32 +429,44 @@
     </footer>
 
     <script>
-        // Hamburger menu toggle
+        // Nav
         const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const navLinks  = document.querySelector('.nav-links');
+        const nav       = document.getElementById('mainNav');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when clicking outside
+        function openMenu() {
+            hamburger.classList.add('active');
+            navLinks.classList.add('active');
+            nav.classList.add('menu-open');
+        }
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            nav.classList.remove('menu-open');
+        }
+        hamburger.addEventListener('click', () => nav.classList.contains('menu-open') ? closeMenu() : openMenu());
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) closeMenu();
         });
+        navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', closeMenu));
 
-        // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
+        // Nav scroll
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.pageYOffset > 80);
+        }, { passive: true });
+
+        // Scroll reveal
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
             });
-        });
+        }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
 </body>
-
 </html>
