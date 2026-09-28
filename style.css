@@ -1130,3 +1130,95 @@ body::before {
     z-index: 9999;
     opacity: 0.4;
 }
+/* Residency Section */
+.residency-section {
+    padding: 8rem 2rem;
+    background: var(--charcoal);
+    color: var(--warm-cream);
+    text-align: center;
+}
+
+.residency-section h2 {
+    font-family: 'Lora', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 400;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+}
+
+.residency-lead {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+    line-height: 1.8;
+}
+
+.residency-grid {
+    max-width: 900px;
+    margin: 4rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    text-align: left;
+}
+
+.residency-item {
+    padding: 2rem;
+    border: 1px solid rgba(212, 165, 116, 0.3);
+}
+
+.residency-item h3 {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+.residency-item ul {
+    list-style: none;
+}
+
+.residency-item li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.15);
+}
+
+.residency-item li:last-child {
+    border-bottom: none;
+}
+
+.residency-cta {
+    margin-top: 3rem;
+}
+
+.residency-cta p {
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+    color: var(--sage);
+}
+
+.residency-cta p a {
+    color: var(--gold);
+}
+
+.service-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--terracotta);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.service-link:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .residency-section {
+        padding: 5rem 1.5rem;
+    }
+
+    .residency-grid {
+        grid-template-columns: 1fr;
+    }
+}
