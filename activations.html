@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/style.css?v=6" />
+    <link rel="stylesheet" href="/style.css?v=7" />
 </head>
 
 <body>
@@ -46,7 +46,7 @@
         <p class="pricing-subtitle">Product launches, store openings, campus and corporate activations. We bring a
             Sahelian coffee bar that people line up for, then linger at, with your brand in every cup.</p>
         <div class="hero-buttons">
-            <a href="#inquire" class="cta-button primary">Plan an Activation</a>
+            <a href="/book.html?type=activation" class="cta-button primary">Plan an Activation</a>
             <a href="/pricing.html" class="cta-button secondary">See Pricing</a>
         </div>
     </section>
@@ -161,38 +161,9 @@
             <h2 class="form-heading">Plan an Activation</h2>
             <p class="setups-intro">Tell us what you're launching. We'll reply within 24–48 hours.</p>
         </div>
-        <form class="booking-form" name="activation-inquiry" method="POST" action="/thanks.html"
-            data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="activation-inquiry">
-                <p class="form-honeypot">
-                    <label>Leave this empty: <input name="bot-field"></label>
-                </p>
-            <div class="form-row">
-                <div class="form-group"><label for="a-name">Your name</label><input id="a-name" name="name" required></div>
-                <div class="form-group"><label for="a-email">Email</label><input id="a-email" type="email" name="email" required></div>
-            </div>
-            <div class="form-row">
-                <div class="form-group"><label for="a-brand">Brand or company</label><input id="a-brand" name="brand" required></div>
-                <div class="form-group"><label for="a-phone">Phone (optional)</label><input id="a-phone" type="tel" name="phone"></div>
-            </div>
-            <div class="form-row">
-                <div class="form-group"><label for="a-date">Event date</label><input id="a-date" type="date" name="date"></div>
-                <div class="form-group"><label for="a-guests">Expected guests</label><input id="a-guests" type="number" min="1" name="guests"></div>
-            </div>
-            <div class="form-row">
-                <div class="form-group"><label for="a-location">Location</label><input id="a-location" name="location" placeholder="Venue or neighborhood"></div>
-                <div class="form-group"><label for="a-setup">Setup</label>
-                    <select id="a-setup" name="setup">
-                        <option>Not sure yet</option>
-                        <option>Tap cart</option>
-                        <option>Espresso cart</option>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group"><label for="a-details">What's the activation?</label>
-                <textarea id="a-details" name="details" rows="5" placeholder="What you're launching, who's coming, and any branding you have in mind."></textarea></div>
-            <button type="submit" class="cta-button">Send Inquiry</button>
-        </form>
+        <div class="inquire-cta">
+            <a href="/book.html?type=activation" class="cta-button">Plan an Activation</a>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -212,6 +183,7 @@
                 <a href="https://tiktok.com/@cafe_ivoire" target="_blank">TikTok</a>
                 <a href="https://beacons.ai/cafe_ivoire" target="_blank">Links</a>
             </div>
+            <p class="footer-contact"><a href="tel:+14049812631">(404) 981-2631</a> · <a href="mailto:cafeivoireofficial@gmail.com">cafeivoireofficial@gmail.com</a></p>
             <p>Café Ivoire — A space for stories, sipped slowly.</p>
         </div>
     </footer>

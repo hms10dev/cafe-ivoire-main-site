@@ -1935,18 +1935,9 @@ h1 {
     margin-bottom: 1rem;
 }
 
-.booking-form-section .booking-form {
-    margin-top: 3rem;
-}
-
-.form-honeypot {
-    position: absolute;
-    left: -9999px;
-}
-
-button.cta-button {
-    cursor: pointer;
-    font-family: 'Inter', sans-serif;
+.inquire-cta {
+    margin-top: 2.5rem;
+    text-align: center;
 }
 
 .enhancements-note a {
@@ -1957,12 +1948,20 @@ button.cta-button {
     .booking-form-section {
         padding: 4rem 1.5rem;
     }
-
-    .booking-form {
-        padding: 2rem 1.5rem;
-    }
 }
 
 .partner-logo img[src*="aara"] {
     max-width: 190px;
+}
+
+.footer-contact {
+    font-family: 'Inter', sans-serif !important;
+    font-style: normal !important;
+    font-size: 0.9rem;
+}
+
+.footer-contact a,
+.contact-info a {
+    color: var(--gold);
+    text-decoration: none;
 }

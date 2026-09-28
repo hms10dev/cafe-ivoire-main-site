@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/style.css?v=6" />
+    <link rel="stylesheet" href="/style.css?v=7" />
 </head>
 
 <body>
@@ -46,7 +46,7 @@
         <p class="pricing-subtitle">We're looking for a recurring spot inside a space that already has its people.
             You bring the room. We bring the coffee, the care, and a community that follows the cart.</p>
         <div class="hero-buttons">
-            <a href="#inquire" class="cta-button primary">Talk Residency With Us</a>
+            <a href="/book.html?type=residency" class="cta-button primary">Talk Residency With Us</a>
         </div>
     </section>
 
@@ -128,46 +128,9 @@
             <h2 class="form-heading">Talk Residency With Us</h2>
             <p class="setups-intro">Tell us about your space. We'll reply within 24–48 hours.</p>
         </div>
-        <form class="booking-form" name="residency-inquiry" method="POST" action="/thanks.html"
-            data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="residency-inquiry">
-                <p class="form-honeypot">
-                    <label>Leave this empty: <input name="bot-field"></label>
-                </p>
-            <div class="form-row">
-                <div class="form-group"><label for="r-name">Your name</label><input id="r-name" name="name" required></div>
-                <div class="form-group"><label for="r-email">Email</label><input id="r-email" type="email" name="email" required></div>
-            </div>
-            <div class="form-row">
-                <div class="form-group"><label for="r-space">Name of your space</label><input id="r-space" name="space" required></div>
-                <div class="form-group"><label for="r-phone">Phone (optional)</label><input id="r-phone" type="tel" name="phone"></div>
-            </div>
-            <div class="form-row">
-                <div class="form-group"><label for="r-type">Type of space</label>
-                    <select id="r-type" name="space-type">
-                        <option>Bookstore or gallery</option>
-                        <option>Gym or wellness studio</option>
-                        <option>Coworking space</option>
-                        <option>Boutique or shop</option>
-                        <option>Masjid or community center</option>
-                        <option>Other</option>
-                    </select>
-                </div>
-                <div class="form-group"><label for="r-location">Neighborhood or address</label><input id="r-location" name="location"></div>
-            </div>
-            <div class="form-group"><label for="r-schedule">What schedule are you picturing?</label>
-                <select id="r-schedule" name="schedule">
-                    <option>Not sure yet</option>
-                    <option>Weekly</option>
-                    <option>Weekends</option>
-                    <option>A set season</option>
-                    <option>Monthly</option>
-                </select>
-            </div>
-            <div class="form-group"><label for="r-details">Tell us about your space</label>
-                <textarea id="r-details" name="details" rows="5" placeholder="Who comes through, how busy it gets, and where a cart could fit."></textarea></div>
-            <button type="submit" class="cta-button">Send Inquiry</button>
-        </form>
+        <div class="inquire-cta">
+            <a href="/book.html?type=residency" class="cta-button">Talk Residency With Us</a>
+        </div>
     </section>
 
     <!-- Footer -->
@@ -187,6 +150,7 @@
                 <a href="https://tiktok.com/@cafe_ivoire" target="_blank">TikTok</a>
                 <a href="https://beacons.ai/cafe_ivoire" target="_blank">Links</a>
             </div>
+            <p class="footer-contact"><a href="tel:+14049812631">(404) 981-2631</a> · <a href="mailto:cafeivoireofficial@gmail.com">cafeivoireofficial@gmail.com</a></p>
             <p>Café Ivoire — A space for stories, sipped slowly.</p>
         </div>
     </footer>

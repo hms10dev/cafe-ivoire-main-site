@@ -8,7 +8,6 @@
     <meta name="description"
         content="Book Café Ivoire for your Atlanta event. Request a custom quote for coffee catering at weddings, corporate events, and gatherings.">
     <link rel="icon" type="image/png" href="/images/favicon.png">
-    <script async src="https://tally.so/widgets/embed.js"></script>
     <style type="text/css">
         html {
             margin: 0;
@@ -66,6 +65,18 @@
     </div>
     <iframe data-tally-src="https://tally.so/r/2ENyLM?transparentBackground=1" width="100%" height="100%"
         frameborder="0" marginheight="0" marginwidth="0" title="Book Café Ivoire for Your Event"></iframe>
+    <script>
+        // Pass ?type=activation / ?type=residency through to the Tally form's hidden field
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            if (!params.toString()) return;
+            const frame = document.querySelector('iframe[data-tally-src]');
+            const src = new URL(frame.getAttribute('data-tally-src'));
+            params.forEach((value, key) => src.searchParams.set(key, value));
+            frame.setAttribute('data-tally-src', src.toString());
+        })();
+    </script>
+    <script async src="https://tally.so/widgets/embed.js"></script>
 </body>
 
 </html>
