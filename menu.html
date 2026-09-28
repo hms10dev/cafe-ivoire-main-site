@@ -6,20 +6,193 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu – Café Ivoire | Atlanta Coffee Catering</title>
     <meta name="description"
-        content="Sahelian-inspired espresso, matcha, cold brew, beignets, and scones. View our full coffee catering menu featuring plantain lattes, heritage bakes, and signature drinks.">
+        content="Sahelian-inspired espresso, matcha, cold brew, beignets, and bissap. View our full coffee catering menu featuring plantain lattes, matcha, and signature drinks.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css?v=4" />
+    <style>
+        .menu-item-anchor {
+            display: block;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: var(--terracotta);
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
+
+        .menu-item-header {
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+            margin-bottom: 0.85rem;
+            flex-wrap: wrap;
+        }
+
+        .menu-item-name {
+            font-family: 'Lora', serif;
+            font-size: 1.35rem;
+            color: var(--deep-brown);
+            flex: 1;
+            min-width: 0;
+        }
+
+        .menu-item-price {
+            font-size: 0.85rem;
+            color: var(--sage);
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
+        }
+
+        .menu-item {
+            padding: 3.5rem 0 !important;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.15) !important;
+            border: none;
+            background: transparent !important;
+            box-shadow: none !important;
+            border-bottom: 1px solid rgba(212, 165, 116, 0.15) !important;
+            transform: none !important;
+        }
+
+        .menu-item:last-child {
+            border-bottom: none !important;
+        }
+
+        .menu-item:hover {
+            transform: none !important;
+            box-shadow: none !important;
+        }
+
+        .menu-items {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .menu-section {
+            padding: 6rem 2rem;
+            background: var(--warm-cream);
+        }
+
+        .menu-section:nth-child(even) {
+            background: white;
+        }
+
+        .menu-section-title {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            color: var(--deep-brown);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-section-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--sage);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        .menu-hero {
+            padding: 11rem 2rem 7rem;
+            background: linear-gradient(165deg, #F5EFE6 0%, #E8DCC8 100%);
+            text-align: center;
+        }
+
+        .menu-hero h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .menu-item-description {
+            font-size: 1rem;
+            color: var(--sage);
+            line-height: 1.8;
+        }
+
+        .menu-item-note {
+            font-size: 0.82rem;
+            color: var(--terracotta);
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        .menu-addon-callout {
+            max-width: 680px;
+            margin: 0 auto 0;
+            padding: 1.25rem 1.75rem;
+            border: 1px solid rgba(212, 165, 116, 0.3);
+            background: rgba(212, 165, 116, 0.06);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--terracotta);
+            letter-spacing: 0.04em;
+        }
+
+        .menu-addon-callout strong {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+        }
+
+        .menu-cta {
+            padding: 8rem 2rem;
+            background: var(--charcoal);
+            color: var(--warm-cream);
+            text-align: center;
+        }
+
+        .menu-cta h2 {
+            font-family: 'Lora', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 1.25rem;
+        }
+
+        .menu-cta > .story-content > p {
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+            color: rgba(245, 239, 230, 0.75);
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .menu-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .contact-info {
+            margin-top: 2.5rem;
+        }
+
+        .contact-info p {
+            margin: 0.5rem 0;
+            color: var(--sage);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .menu-section { padding: 5rem 1.5rem; }
+            .menu-hero    { padding: 8rem 1.5rem 5rem; }
+            .menu-cta     { padding: 6rem 1.5rem; }
+        }
+    </style>
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="/" class="logo-link">café ivoire</a>
             <button class="hamburger" aria-label="Toggle menu">
@@ -37,187 +210,168 @@
         </div>
     </nav>
 
-    <!-- Menu Hero -->
+    <!-- Hero -->
     <section class="menu-hero">
-        <h1>Menu — Café Ivoire</h1>
-        <p class="menu-subtitle">Sahelian-inspired espresso, matcha, cold brew, and soft comforts.<br>Crafted with plantain,
-            heritage, and intention.</p>
+        <h1 class="hero-enter" style="animation-delay:200ms">Menu — Café Ivoire</h1>
+        <p class="menu-subtitle hero-enter" style="animation-delay:500ms">Sahelian-inspired espresso, matcha, cold brew, and soft comforts.<br>Crafted with plantain, heritage, and intention.</p>
     </section>
 
-    <!-- Café Section -->
+    <!-- Café -->
     <section class="menu-section">
         <div class="story-content">
-            <h2 class="menu-section-title">Café</h2>
-            <p class="menu-section-note">(Hot or Iced)</p>
+            <h2 class="menu-section-title reveal">Café</h2>
+            <p class="menu-section-note reveal">Hot or Iced &nbsp;·&nbsp; Add a flavor for +$0.50</p>
         </div>
-        <div class="menu-items">
-            <div class="menu-item">
+        <div class="menu-items" style="margin-top:3rem">
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">espresso · plantain · nostalgia</span>
                 <div class="menu-item-header">
                     <h3 class="menu-item-name">A1 · Doussou Banani</h3>
-                    <span class="menu-item-price">$6.50</span>
+                    <span class="menu-item-price">$7.50</span>
                 </div>
                 <p class="menu-item-description">
-                    A creamy plantain latte inspired by Alloco, an Ivorian staple—made with house plantain syrup and
-                    smooth espresso.
+                    A creamy plantain latte inspired by Alloco, an Ivorian staple — made with house plantain syrup and smooth espresso.
                 </p>
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">espresso · velvety · classic</span>
                 <div class="menu-item-header">
-                    <h3 class="menu-item-name">A2 · Gâteau Doumini</h3>
-                    <span class="menu-item-price">$6.50</span>
+                    <h3 class="menu-item-name">A2 · Latte</h3>
+                    <span class="menu-item-price">$6.25</span>
                 </div>
                 <p class="menu-item-description">
-                    A dessert-in-a-cup moment: warm vanilla, caramelized sugar notes, and espresso layered to mimic
-                    birthday cake.
+                    Rich, aromatic espresso blended with velvety steamed milk, topped with a delicate layer of frothy foam.
                 </p>
             </div>
 
-            <div class="menu-item">
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">espresso · bold · smooth</span>
                 <div class="menu-item-header">
-                    <h3 class="menu-item-name">A3 · Doucement Cold Brew</h3>
+                    <h3 class="menu-item-name">A3 · Americano</h3>
+                    <span class="menu-item-price">$5.25</span>
+                </div>
+                <p class="menu-item-description">
+                    A robust shot of espresso blended with water — smooth, clean, and satisfying.
+                </p>
+            </div>
+
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">cold brew · slow · smooth</span>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">A4 · Doucement Cold Brew</h3>
                     <span class="menu-item-price">$5.00</span>
                 </div>
                 <p class="menu-item-description">
-                    Doucement, doucement. Slow-steeped overnight and poured over ice. Smooth, low-acid, and in no
-                    hurry.
+                    Doucement, doucement. Slow-steeped overnight and poured over ice. Smooth, low-acid, and in no hurry.
                 </p>
-                <p class="menu-item-note">Iced only, 12oz. Add a cold foam for +$2.</p>
+                <p class="menu-item-note">Iced only · 12oz</p>
             </div>
+
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">cold brew · oat · plantain</span>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">A5 · Cold Brew Latte</h3>
+                    <span class="menu-item-price">$6.50</span>
+                </div>
+                <p class="menu-item-description">
+                    Our cold brew with oat milk and Banane Douce. Soft, sweet, and easy to keep sipping.
+                </p>
+                <p class="menu-item-note">Iced only · 12oz</p>
+            </div>
+        </div>
+
+        <div class="menu-addon-callout reveal" style="margin-top:3rem">
+            <strong>Add Plantain Cold Foam</strong> &nbsp;·&nbsp; +$2
         </div>
     </section>
 
-    <!-- Matcha Section -->
+    <!-- Matcha -->
     <section class="menu-section">
         <div class="story-content">
-            <h2 class="menu-section-title">Matcha</h2>
-            <p class="menu-section-note">(Hot or Iced)</p>
+            <h2 class="menu-section-title reveal">Matcha</h2>
+            <p class="menu-section-note reveal">Hot or Iced &nbsp;·&nbsp; Add a flavor for +$0.50</p>
         </div>
-        <div class="menu-items">
-            <div class="menu-item">
+        <div class="menu-items" style="margin-top:3rem">
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">matcha · nutty · tropical</span>
                 <div class="menu-item-header">
-                    <h3 class="menu-item-name">B1 · La Minimaliste</h3>
-                    <span class="menu-item-price">$4.00</span>
+                    <h3 class="menu-item-name">B1 · Matcha Mandé</h3>
+                    <span class="menu-item-price">$7.25</span>
+                </div>
+                <p class="menu-item-description">
+                    Matcha meets Mandé flavors — subtle nuttiness with a hint of tropical plantain sweetness.
+                </p>
+            </div>
+
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">matcha · pure · clean</span>
+                <div class="menu-item-header">
+                    <h3 class="menu-item-name">B2 · La Minimaliste</h3>
+                    <span class="menu-item-price">$5.00</span>
                 </div>
                 <p class="menu-item-description">
                     Pure matcha, lightly sweetened. Clean and elegant. Nothing extra.
                 </p>
             </div>
+        </div>
 
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3 class="menu-item-name">B2 · Matcha Mandé</h3>
-                    <span class="menu-item-price">$6.50</span>
-                </div>
-                <p class="menu-item-description">
-                    Matcha meets Mandé flavors—subtle nuttiness with a hint of tropical plantain sweetness.
-                </p>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3 class="menu-item-name">B3 · Garden Party</h3>
-                    <span class="menu-item-price">$6.50</span>
-                </div>
-                <p class="menu-item-description">
-                    Earl Grey–infused matcha with a swirl of fresh strawberry purée.
-                </p>
-            </div>
+        <div class="menu-addon-callout reveal" style="margin-top:3rem">
+            <strong>Add Plantain Cold Foam</strong> &nbsp;·&nbsp; +$2
         </div>
     </section>
 
-    <!-- Cold Foams Section -->
+    <!-- Doumini -->
     <section class="menu-section">
         <div class="story-content">
-            <h2 class="menu-section-title">Cold Foams</h2>
-            <p class="menu-section-note">(Add to any drink)</p>
+            <h2 class="menu-section-title reveal">Doumini</h2>
+            <p class="menu-section-note reveal">Small bites. Big comfort.</p>
         </div>
-        <div class="menu-items">
-            <div class="menu-item">
+        <div class="menu-items" style="margin-top:3rem">
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">baked · soft · powdered sugar</span>
                 <div class="menu-item-header">
-                    <h3 class="menu-item-name">C1 · Caramel Salé</h3>
-                    <span class="menu-item-price">+$2</span>
+                    <h3 class="menu-item-name">C1 · Mama T's Beignets</h3>
+                    <span class="menu-item-price">$3.50 &nbsp;·&nbsp; 3 for $10</span>
                 </div>
                 <p class="menu-item-description">
-                    A silky salted-caramel cloud with a buttery finish.
-                </p>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3 class="menu-item-name">C2 · Brown Butter Cold Foam</h3>
-                    <span class="menu-item-price">+$2</span>
-                </div>
-                <p class="menu-item-description">
-                    Toasted, nutty, warm—like the first sizzle of beurre noisette.
+                    Comfy bites of heaven dusted with sucre. Soft, warm, cloudlike — just like our aunties made.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Sans-Caffeine Section -->
+    <!-- Sans-Caffeine -->
     <section class="menu-section">
         <div class="story-content">
-            <h2 class="menu-section-title">Sans-Caffeine</h2>
+            <h2 class="menu-section-title reveal">Sans-Caffeine</h2>
         </div>
-        <div class="menu-items">
-            <div class="menu-item">
+        <div class="menu-items" style="margin-top:3rem">
+            <div class="menu-item reveal">
+                <span class="menu-item-anchor">caffeine-free · hibiscus · vibrant</span>
                 <div class="menu-item-header">
-                    <h3 class="menu-item-name">D1 · Lait du Dodo</h3>
-                    <span class="menu-item-price">$5.00</span>
+                    <h3 class="menu-item-name">D1 · Bissap Spritz</h3>
+                    <span class="menu-item-price">$6.00</span>
                 </div>
                 <p class="menu-item-description">
-                    Warm white hot chocolate with Earl Grey. Cozy, soothing, perfect for winding down.
+                    Deep red hibiscus, kissed with citrus and sparkle. Vibrant, refreshing, and caffeine-free.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Baked Goods Section -->
-    <section class="menu-section">
-        <div class="story-content">
-            <h2 class="menu-section-title">Baked Goods</h2>
-        </div>
-        <div class="menu-items">
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3 class="menu-item-name">Mama's Beignets</h3>
-                    <span class="menu-item-price">$4.00–$7.00</span>
-                </div>
-                <p class="menu-item-description">
-                    Hand-cut, lightly sweet, almost-cloudlike beignets inspired by the ones our aunties made after long
-                    afternoons. Soft, warm, dusted with powdered sugar.
-                </p>
-                <p class="menu-item-note">Available as single, 3-pack, or event tray.</p>
-            </div>
-
-            <div class="menu-item">
-                <div class="menu-item-header">
-                    <h3 class="menu-item-name">Sahelian Scones</h3>
-                    <span class="menu-item-price">$4.50</span>
-                </div>
-                <p class="menu-item-description">
-                    Earl Grey–kissed scones with hints of vanilla and citrus. A nod to Abidjan mornings and slow tea
-                    traditions.
-                </p>
-                <p class="menu-item-note">Pairs beautifully with matcha or Lait du Dodo.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Event Catering CTA -->
+    <!-- CTA -->
     <section class="menu-cta">
         <div class="story-content">
-            <h2>Event Catering</h2>
-            <p>Bring Sahelian comfort to your gathering. espresso, matcha, cold brew, cold foams, Mama's Beignets, and Sahelian
-                Scones.</p>
-            <div class="menu-cta-buttons">
+            <h2 class="reveal">Event Catering</h2>
+            <p class="reveal">Bring Sahelian comfort to your gathering — espresso, matcha, cold brew, Mama T's Beignets, and Bissap Spritz for your crew.</p>
+            <div class="menu-cta-buttons reveal">
                 <a href="/pricing.html" class="cta-button">View Pricing</a>
                 <a href="/book.html" class="cta-button secondary">Book Us</a>
             </div>
-            <div class="contact-info">
-                <p>📧 hello@cafeivoire.co</p>
-                <p>📱 470-244-6586</p>
+            <div class="contact-info reveal">
+                <p>cafeivoireofficial@gmail.com</p>
+                <p>470-244-6586</p>
             </div>
         </div>
     </section>
@@ -242,32 +396,46 @@
     </footer>
 
     <script>
-        // Hamburger menu toggle
         const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const navLinks  = document.querySelector('.nav-links');
+        const nav       = document.getElementById('mainNav');
+
+        function openMenu() {
+            hamburger.classList.add('active');
+            navLinks.classList.add('active');
+            nav.classList.add('menu-open');
+        }
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            nav.classList.remove('menu-open');
+        }
 
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            nav.classList.contains('menu-open') ? closeMenu() : openMenu();
         });
-
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) closeMenu();
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
 
-        // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.pageYOffset > 60);
+        }, { passive: true });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
             });
-        });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 
 </body>
-
 </html>

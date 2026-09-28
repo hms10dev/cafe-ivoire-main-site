@@ -13,14 +13,13 @@
         href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="icon" type="image/png" href="/images/favicon.png">
-
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/style.css?v=4" />
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav" id="mainNav">
         <div class="nav-container">
             <a href="/" class="logo-link">café ivoire</a>
             <button class="hamburger" aria-label="Toggle menu">
@@ -39,68 +38,33 @@
     </nav>
 
     <!-- Hero -->
-    <section class="hero">
+    <section class="hero" id="hero">
+        <canvas id="particleCanvas" class="particle-canvas"></canvas>
         <div class="hero-content">
             <img src="/images/logo.png" alt="Café Ivoire Logo"
-                style="width: 200px; height: 200px; margin-bottom: 2rem; opacity: 0.95;">
-            <h1>Sahelian Coffee Catering in Atlanta</h1>
-            <p class="tagline">Coffee, comfort, and Côte d'Ivoire: brought straight to your event.</p>
-            <p class="hero-body">
+                class="hero-enter"
+                style="width:200px;height:200px;margin-bottom:2.5rem;animation-delay:0ms">
+            <h1 class="hero-enter" style="animation-delay:300ms">Sahelian Coffee Catering in Atlanta</h1>
+            <p class="tagline hero-enter" style="animation-delay:550ms">Coffee, comfort, and Côte d'Ivoire: brought straight to your event.</p>
+            <p class="hero-body hero-enter" style="animation-delay:800ms">
                 Café Ivoire is a mobile Sahelian café serving specialty espresso, matcha, cold brew, and beignets
                 with West African warmth. We pour at private events and brand activations across Atlanta, and
                 we're looking for a place to call home.
             </p>
-            <div class="hero-buttons">
+            <div class="hero-buttons hero-enter" style="animation-delay:1100ms">
                 <a href="/book.html" class="cta-button primary">Book Your Event</a>
                 <a href="#residency" class="cta-button secondary">Host Our Residency</a>
             </div>
         </div>
-        <div class="scroll-indicator">Where the Sahel meets the South</div>
-    </section>
-
-    <!-- Residency -->
-    <section class="residency-section" id="residency">
-        <div class="story-content">
-            <span class="section-label">Now Seeking a Residency</span>
-            <h2>Looking for a home base.</h2>
-            <p class="residency-lead">
-                We're looking for a residency: a recurring spot inside a space that already has its people.
-                A bookstore, gallery, coworking space, studio, boutique, or community hub that wants a
-                café corner without building one.
-            </p>
-        </div>
-        <div class="residency-grid">
-            <div class="residency-item">
-                <h3>What we bring</h3>
-                <ul>
-                    <li>A licensed, health-compliant mobile coffee bar</li>
-                    <li>Espresso or cold brew on tap, matcha, and beignets</li>
-                    <li>Our own staff, setup, and breakdown</li>
-                    <li>A community that follows the cart</li>
-                </ul>
-            </div>
-            <div class="residency-item">
-                <h3>What we're looking for</h3>
-                <ul>
-                    <li>A recurring slot: weekly, weekends, or a set season</li>
-                    <li>A small footprint with access to power</li>
-                    <li>A space in Metro Atlanta with steady foot traffic</li>
-                    <li>A partner who cares about the people who walk in</li>
-                </ul>
-            </div>
-        </div>
-        <div class="residency-cta">
-            <a href="mailto:hello@cafeivoire.co?subject=Residency%20Inquiry" class="cta-button">Talk Residency With Us</a>
-            <p>Or email <a href="mailto:hello@cafeivoire.co?subject=Residency%20Inquiry">hello@cafeivoire.co</a></p>
-        </div>
+        <div class="scroll-indicator hero-enter" style="animation-delay:1700ms">Where the Sahel meets the South</div>
     </section>
 
     <!-- What We Do -->
     <section class="what-we-do">
         <div class="story-content">
-            <span class="section-label">How We Work With You</span>
+            <span class="section-label reveal">How We Work With You</span>
         </div>
-        <div class="services-grid">
+        <div class="services-grid reveal-stagger">
             <div class="service-item">
                 <h3>Private Events</h3>
                 <p>Weddings, walimas, showers, henna nights, birthdays, and offsites. A full-service coffee bar with
@@ -126,96 +90,162 @@
     <!-- Signature Drinks -->
     <section class="signature-section">
         <div class="story-content">
-            <span class="section-label">Signature Sahelian Drinks</span>
+            <span class="section-label reveal">Signature Sahelian Drinks</span>
         </div>
-        <div class="signature-grid">
+        <div class="signature-grid reveal-stagger">
             <div class="signature-item">
                 <h3>Doussou Banani</h3>
-                <p>Our plantain latte-roasted plantain syrup, smooth espresso, warm nostalgia.</p>
+                <p>Our plantain latte — house plantain syrup, smooth espresso, warm nostalgia. The one people ask about.</p>
             </div>
             <div class="signature-item">
-                <h3>Gâteau Doumini</h3>
-                <p>A dessert-in-a-cup: vanilla, caramelized sugar, espresso layered like birthday cake.</p>
+                <h3>Matcha Mandé</h3>
+                <p>Matcha meets Mandé flavors — subtle nuttiness with a hint of tropical plantain sweetness.</p>
+            </div>
+            <div class="signature-item">
+                <h3>La Minimaliste</h3>
+                <p>Pure matcha, lightly sweetened. Clean and elegant. Nothing extra.</p>
             </div>
             <div class="signature-item">
                 <h3>Doucement Cold Brew</h3>
                 <p>Slow-steeped overnight, poured over ice. Smooth, unhurried, exactly what the name says.</p>
             </div>
             <div class="signature-item">
-                <h3>Matcha Mandé</h3>
-                <p>Matcha meets Mandé flavors: subtle nuttiness and tropical plantain sweetness.</p>
+                <h3>Bissap Spritz</h3>
+                <p>Deep red hibiscus, kissed with citrus and sparkle. Vibrant, refreshing, caffeine-free.</p>
             </div>
             <div class="signature-item">
-                <h3>Garden Party</h3>
-                <p>Earl Grey–infused matcha with fresh strawberry purée.</p>
-            </div>
-            <div class="signature-item">
-                <h3>Mama's Beignets</h3>
-                <p>Hand-cut, cloudlike beignets dusted with powdered sugar. Just like our tanties made.</p>
+                <h3>Mama T's Beignets</h3>
+                <p>Comfy bites of heaven dusted with sucre. Soft, warm, cloudlike — just like our aunties made.</p>
             </div>
         </div>
-        <p class="signature-note">Every drink carries a memory from home: crafted with plantains, vanilla, butter,
+        <p class="signature-note reveal">Every drink carries a memory from home — crafted with plantains, vanilla, butter,
             strawberry purée, and Sahelian warmth.</p>
+    </section>
+
+    <!-- Residency -->
+    <section class="sessions-section" id="residency">
+        <div class="sessions-inner">
+            <span class="section-label reveal">Now Seeking a Residency</span>
+            <h2 class="sessions-heading reveal">Looking for a home base.</h2>
+            <p class="sessions-body reveal">
+                We're looking for a residency: a recurring spot inside a space that already has its people.
+                A bookstore, gallery, gym, coworking space, studio, or community hub that wants a café corner
+                without building one.
+            </p>
+            <div class="residency-grid reveal-stagger">
+                <div class="residency-item">
+                    <h3>What we bring</h3>
+                    <ul>
+                        <li>A licensed, health-compliant mobile coffee bar</li>
+                        <li>Espresso or cold brew on tap, matcha, and beignets</li>
+                        <li>Our own staff, setup, and breakdown</li>
+                        <li>A community that follows the cart</li>
+                    </ul>
+                </div>
+                <div class="residency-item">
+                    <h3>What we're looking for</h3>
+                    <ul>
+                        <li>A recurring slot: weekly, weekends, or a set season</li>
+                        <li>A small footprint with access to power</li>
+                        <li>A space in Metro Atlanta with steady foot traffic</li>
+                        <li>A partner who cares about the people who walk in</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sessions-tags reveal-stagger">
+                <span class="session-tag">Roswell · Bookstore</span>
+                <span class="session-tag">Atlanta Beltline · Patagonia</span>
+                <span class="session-tag">Decatur · Masjid</span>
+            </div>
+            <div class="sessions-cta reveal">
+                <p class="sessions-cta-text">Have a space that could use a café corner?</p>
+                <a href="mailto:cafeivoireofficial@gmail.com?subject=Residency%20Inquiry" class="cta-button sessions-btn">Talk Residency With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners -->
+    <section class="partners-section">
+        <div class="partners-inner">
+            <span class="partners-label reveal">Poured at</span>
+            <div class="partners-logos reveal-stagger">
+                <div class="partner-logo">
+                    <img src="/images/partners/patagonia.png" alt="Patagonia"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                    <span class="partner-name-fallback" style="display:none">Patagonia</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="/images/partners/a-better-today.png" alt="A Better Today Books &amp; Boutique"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                    <span class="partner-name-fallback" style="display:none">A Better Today Books &amp; Boutique</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="/images/partners/crunch-fitness.png" alt="Crunch Fitness"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                    <span class="partner-name-fallback" style="display:none">Crunch Fitness</span>
+                </div>
+                <div class="partner-logo">
+                    <img src="/images/partners/aara.png" alt="AARA"
+                        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+                    <span class="partner-name-fallback" style="display:none">AARA</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Who It's For -->
     <section class="who-section">
         <div class="story-content">
-            <span class="section-label">Built for Moments That Matter</span>
+            <span class="section-label reveal">Built for Moments That Matter</span>
         </div>
         <div class="events-list">
-            <ul>
-                <li>Weddings & Walimas</li>
+            <ul class="reveal-stagger">
+                <li>Weddings &amp; Walimas</li>
                 <li>Bridal showers, henna nights, engagement parties</li>
-                <li>Private celebrations & milestone birthdays</li>
-                <li>Brand activations, launches & store openings</li>
-                <li>Corporate events, offsites & campus activations</li>
+                <li>Private celebrations &amp; milestone birthdays</li>
+                <li>Brand activations, launches &amp; store openings</li>
+                <li>Corporate events, offsites &amp; campus activations</li>
             </ul>
-            <p class="location-note">Based in Atlanta, serving Metro Atlanta and surrounding areas.</p>
+            <p class="location-note reveal">Based in Atlanta, serving Metro Atlanta and surrounding areas.</p>
         </div>
     </section>
 
     <!-- Our Story -->
     <section class="story-section">
-        <div class="story-content">
-            <span class="section-label">Where the Sahel Meets the South</span>
-            <p class="story-text">
-                Café Ivoire is a love letter to the Sahel and the South.<br>
-                To plantains roasting in our mothers' kitchens.<br>
-                To attaya poured slowly in small glasses.<br>
-                To long conversations that stretch from Abidjan to Atlanta.
-            </p>
-            <p class="story-text">
-                We built this coffee company to make those memories portable—a mobile third space with espresso, matcha,
-                beignets, and a lot of stubborn auntie love.
-            </p>
+        <div class="story-content" data-story-block>
+            <span class="section-label story-line">Where the Sahel Meets the South</span>
+            <div class="story-text">
+                <span class="story-line">Café Ivoire is a love letter to the Sahel and the South.</span>
+                <span class="story-line">To plantains roasting in our mothers' kitchens.</span>
+                <span class="story-line">To attaya poured slowly in small glasses.</span>
+                <span class="story-line">To long conversations that stretch from Abidjan to Atlanta.</span>
+            </div>
+            <div class="story-text" style="margin-top:2.5rem">
+                <span class="story-line">We built this coffee company to make those memories portable — a mobile third space with espresso, matcha, beignets, and a lot of stubborn auntie love.</span>
+            </div>
         </div>
     </section>
 
     <!-- Values -->
     <section class="values-section">
         <div class="story-content">
-            <span class="section-label">What We're Building</span>
-            <p class="story-text" style="margin-bottom: 3rem;">
+            <span class="section-label reveal">What We're Building</span>
+            <p class="story-text reveal" style="margin-bottom:4rem">
                 From cart to café, we're growing slowly, intentionally. Right now that means private events, brand
                 activations, and finding the right residency to grow into.
             </p>
         </div>
-        <div class="values-grid">
+        <div class="values-grid reveal-stagger">
             <div class="value-item">
                 <svg class="value-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="12" cy="12" r="10"></circle>
                     <line x1="2" y1="12" x2="22" y2="12"></line>
-                    <path
-                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                    </path>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
                 </svg>
                 <h3 class="value-title">Diaspora-Driven</h3>
-                <p class="value-description">Every drink is rooted in West African heritage—never borrowed, always
-                    remembered.</p>
+                <p class="value-description">Every drink is rooted in West African heritage — never borrowed, always remembered.</p>
             </div>
-
             <div class="value-item">
                 <svg class="value-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -225,10 +255,8 @@
                     <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
                 <h3 class="value-title">Community-Centered</h3>
-                <p class="value-description">A platform for Black and African artisans, makers, and storytellers to
-                    thrive.</p>
+                <p class="value-description">A platform for Black and African artisans, makers, and storytellers to thrive.</p>
             </div>
-
             <div class="value-item">
                 <svg class="value-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -237,14 +265,13 @@
                     <circle cx="12" cy="12" r="3"></circle>
                 </svg>
                 <h3 class="value-title">Built to Last</h3>
-                <p class="value-description">Growing with intention, not speed. From cart to café, one step at a time.
-                </p>
+                <p class="value-description">Growing with intention, not speed. From cart to café, one step at a time.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Strip -->
-    <section class="cta-strip">
+    <section class="cta-strip reveal">
         <h2>Ready to bring Sahelian coffee to your event?</h2>
         <p>Private event or brand activation, tell us your date, guest count, and vision.</p>
         <div class="hero-buttons">
@@ -272,33 +299,153 @@
         </div>
     </footer>
 
+    <!-- Sticky CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <p>Ready to book your event?</p>
+        <a href="/book.html" class="cta-button">Book Now</a>
+    </div>
+
     <script>
-        // Hamburger menu toggle
+        // ── Hamburger ───────────────────────────────────────────
         const hamburger = document.querySelector('.hamburger');
-        const navLinks = document.querySelector('.nav-links');
+        const navLinks  = document.querySelector('.nav-links');
+
+        function openMenu() {
+            hamburger.classList.add('active');
+            navLinks.classList.add('active');
+            nav.classList.add('menu-open');
+        }
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            navLinks.classList.remove('active');
+            nav.classList.remove('menu-open');
+        }
 
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
+            nav.classList.contains('menu-open') ? closeMenu() : openMenu();
         });
-
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) closeMenu();
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
 
-        // Close menu when clicking a link
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
+        // ── Fuzzy particle system ───────────────────────────────
+        (function () {
+            const canvas = document.getElementById('particleCanvas');
+            const ctx    = canvas.getContext('2d');
+
+            const COLORS = [
+                [198, 123, 92],   // terracotta
+                [212, 165, 116],  // gold
+                [74,  52,  40],   // deep brown
+                [155, 139, 126],  // sage
+            ];
+
+            function resize() {
+                canvas.width  = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize, { passive: true });
+
+            function makeParticle(startAnywhere) {
+                const r = 18 + Math.random() * 52;
+                return {
+                    x:           Math.random() * canvas.width,
+                    y:           startAnywhere
+                                   ? Math.random() * canvas.height
+                                   : canvas.height + r + Math.random() * 120,
+                    r,
+                    opacity:     0.05 + Math.random() * 0.13,
+                    speed:       0.12 + Math.random() * 0.32,
+                    wobble:      (Math.random() - 0.5) * 0.45,
+                    wobbleFreq:  0.007 + Math.random() * 0.014,
+                    wobblePhase: Math.random() * Math.PI * 2,
+                    color:       COLORS[Math.floor(Math.random() * COLORS.length)],
+                };
+            }
+
+            const COUNT     = 20;
+            const particles = Array.from({ length: COUNT }, () => makeParticle(true));
+            let   t         = 0;
+
+            function draw() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                t++;
+
+                particles.forEach(p => {
+                    p.y -= p.speed;
+                    p.x += Math.sin(t * p.wobbleFreq + p.wobblePhase) * p.wobble;
+
+                    if (p.y + p.r < 0) {
+                        Object.assign(p, makeParticle(false));
+                    }
+
+                    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.r);
+                    const [r, gr, b] = p.color;
+                    g.addColorStop(0,    `rgba(${r},${gr},${b},${p.opacity})`);
+                    g.addColorStop(0.45, `rgba(${r},${gr},${b},${p.opacity * 0.35})`);
+                    g.addColorStop(1,    `rgba(${r},${gr},${b},0)`);
+
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = g;
+                    ctx.fill();
+                });
+
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+
+        // ── Scroll reveal ───────────────────────────────────────
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
             });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => {
+            revealObserver.observe(el);
         });
+
+        // ── Story line stagger ──────────────────────────────────
+        const storyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.story-line').forEach((line, i) => {
+                        line.style.transitionDelay = `${i * 180}ms`;
+                        line.classList.add('visible');
+                    });
+                    storyObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('[data-story-block]').forEach(el => {
+            storyObserver.observe(el);
+        });
+
+        // ── Scroll: nav + sticky CTA + parallax ────────────────
+        const nav        = document.getElementById('mainNav');
+        const hero       = document.getElementById('hero');
+        const heroContent = hero.querySelector('.hero-content');
+        const stickyCta  = document.getElementById('stickyCta');
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.pageYOffset;
+            nav.classList.toggle('scrolled', scrollY > 60);
+            stickyCta.classList.toggle('visible', hero.getBoundingClientRect().bottom < 0);
+            if (scrollY < window.innerHeight * 1.2) {
+                heroContent.style.transform = `translateY(${scrollY * 0.16}px)`;
+            }
+        }, { passive: true });
     </script>
 
 </body>
-
 </html>
