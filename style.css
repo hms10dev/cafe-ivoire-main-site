@@ -53,7 +53,7 @@ body {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1.75rem;
     list-style: none;
 }
 
@@ -1911,4 +1911,58 @@ h1 {
     .photo-strip-track img {
         scroll-snap-align: center;
     }
+}
+
+/* Activations + Residency pages */
+.pricing-hero .rate-label {
+    margin-bottom: 1rem;
+}
+
+.pricing-hero .hero-buttons {
+    margin-top: 2.5rem;
+}
+
+.page-photo-strip {
+    padding: 0;
+    background: white;
+}
+
+.form-heading {
+    font-family: 'Lora', serif;
+    font-size: 2rem;
+    color: var(--deep-brown);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.booking-form-section .booking-form {
+    margin-top: 3rem;
+}
+
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+}
+
+button.cta-button {
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+}
+
+.enhancements-note a {
+    color: var(--terracotta);
+}
+
+@media (max-width: 768px) {
+    .booking-form-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .booking-form {
+        padding: 2rem 1.5rem;
+    }
+}
+
+.partner-logo img[src*="aara"] {
+    max-width: 190px;
 }
