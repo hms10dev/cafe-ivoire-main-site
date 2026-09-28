@@ -1862,3 +1862,53 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+/* Photo Strip */
+.photo-strip {
+    padding: 0 0 4rem;
+    background: var(--warm-cream);
+    text-align: center;
+}
+
+.photo-strip-track {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+.photo-strip-track img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-strip-link {
+    display: inline-block;
+    margin-top: 2rem;
+    color: var(--terracotta);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.photo-strip-link:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .photo-strip-track {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 70%;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: 0 1rem;
+    }
+
+    .photo-strip-track img {
+        scroll-snap-align: center;
+    }
+}
